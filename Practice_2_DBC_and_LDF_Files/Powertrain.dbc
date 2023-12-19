@@ -1,0 +1,56 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS Gateway
+
+
+BO_ 100 BMS_HV: 7 BMS
+ SG_ BMS_HV_Status : 0|1@1+ (1,0) [0|1] ""  Gateway
+ SG_ BMS_HVOnOff_STS : 1|1@1+ (1,0) [0|1] ""  Gateway
+ SG_ BMS_MaxCellTmp : 8|8@1- (1,0) [-40|120] "Celsius"  Gateway
+ SG_ BMS_MinCellTemp : 16|8@1- (1,0) [-40|120] "Celsius"  Gateway
+ SG_ BMS_PackTemp : 24|8@1- (1,0) [-40|120] "Celsius"  Gateway
+ SG_ BMS_SOH : 32|7@1+ (1,0) [0|100] "%"  Gateway
+ SG_ BMS_SOC : 40|7@1+ (1,0) [0|100] "%"  Gateway
+ SG_ BMS_Ignition : 48|1@1+ (1,0) [0|1] ""  Gateway
+
+BO_ 101 EDS_ST: 5 BMS
+ SG_ EDS_Speed : 0|9@1+ (1,0) [0|400] "kmh"  Gateway
+ SG_ EDS_temp : 16|8@1+ (1,0) [-40|120] "Celsius"  Gateway
+ SG_ EDS_MaxTrq : 24|13@1+ (1,0) [0|5000] "Nm"  Gateway
+
+
+
+

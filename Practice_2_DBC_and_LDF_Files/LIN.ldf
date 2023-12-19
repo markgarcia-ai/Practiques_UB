@@ -1,0 +1,25 @@
+LIN_description_file;
+LIN_protocol_version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed = 19.2 Kbps;
+
+Nodes {
+	Master : BCM,10 ms, 0.1 ms;
+	Slaves : ALM_Z1, ALM_Z2, ALM_Z3, ALM_Z4, ALM_Z5;
+}
+
+Signals {
+	AmbLightColorZoneReq: 3, 0, BCM, ALM_Z1, ALM_Z2, ALM_Z3, ALM_Z4, ALM_Z5;  
+	AmbLightColorRed: 8, 0, BCM, ALM_Z1, ALM_Z2, ALM_Z3, ALM_Z4, ALM_Z5; 
+	AmbLightColorGreen: 8, 0, BCM, ALM_Z1, ALM_Z2, ALM_Z3, ALM_Z4, ALM_Z5;
+	AmbLightColorBlue: 8, 0, BCM, ALM_Z1, ALM_Z2, ALM_Z3, ALM_Z4, ALM_Z5;
+}
+
+Frames{
+	BCM_Frm1: 0x01, BCM, 8{
+	AmbLightColorZoneReq, 8;
+	AmbLightColorRed, 16;
+	AmbLightColorGreen, 24;
+	AmbLightColorBlue, 32;
+	}
+}
